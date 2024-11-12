@@ -1,29 +1,31 @@
 {
   "name": "@nestpack/hooks",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Hooks Module for NestJS projects",
   "homepage": "https://github.com/nestpack/hooks",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
-    "prebuild":"rimraf dist",
-    "build":"tsc -p tsconfig.build.json",
-    "release": "git tag -a v$npm_package_version -m v$npm_package_version && git push --tags"
+    "prebuild": "rimraf dist",
+    "build": "tsc -p tsconfig.build.json",
+    "release": "git tag -a v$npm_package_version -m v$npm_package_version && git push --tags",
+    "prepare": "install-peers"
   },
   "author": "Harry Horton",
   "license": "MIT",
-  "dependencies": {
-    "@nestjs/common": "^7.4.4",
-    "@nestjs/core": "^7.4.4",
+  "peerDependencies": {
+    "@nestjs/common": "^10.0.0",
+    "@nestjs/core": "^10.0.0",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^6.6.3",
+    "rxjs": "^7.1.0",
     "typescript": "^4.0.3"
   },
   "devDependencies": {
-    "@nestjs/testing": "^7.4.4",
+    "@nestjs/testing": "^10.0.0",
     "@types/jest": "^26.0.15",
     "@types/node": "^14.14.0",
+    "install-peers-cli": "^2.2.0",
     "jest": "^26.6.0",
     "prettier": "^2.1.2",
     "rimraf": "^3.0.2",
