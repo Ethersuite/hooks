@@ -10,7 +10,8 @@
     "prebuild": "rimraf dist",
     "build": "tsc -p tsconfig.build.json",
     "release": "git tag -a v$npm_package_version -m v$npm_package_version && git push --tags",
-    "prepare": "install-peers"
+    "prepare": "install-peers",
+    "postinstall": "npm run build"
   },
   "author": "Harry Horton",
   "license": "MIT",
